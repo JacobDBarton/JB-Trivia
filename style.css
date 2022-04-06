@@ -1,0 +1,9 @@
+/* For fading in and out 
+$playingScreen.fadeOut()
+
+$startButton.click(function() {
+    // console.log("start button works")
+    $homeScreen.fadeOut();
+    $playingScreen.fadeIn();
+    setInterval(incrementStats, 2000);
+}) */
