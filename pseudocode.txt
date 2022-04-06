@@ -1,0 +1,29 @@
+Create a start page that will have Trivia in bold and centered in the middle of the screen. 
+
+On the Start page have a start game button to be sent to another page.
+
+On the second page there will be a navigaion bar that has catgories with cards to click.
+    use methods of css to make animations happen
+        * Add event listeners to the necessary HTML elements. When a user clicks on something it should trigger an event.
+        * Possible true or false boolean?
+        * fadeIn
+        * fadeOut
+        * color
+
+Once the card has been chosen they have 30 seconds to answer the question.
+    * Add a 30 second timer
+    * Have the booelen === false if timer entends 30secs     
+    * use the setInterval and clearInterval 
+    * setTimeout and clearTimeout
+
+If the user gets a question wrong update screen with a message saying wrong and make the card turn red.
+If the user doesn't answer the question in the 30 second timer window, turn the card red. 
+If the user gets 3 wrong the game ends. 
+
+If the user gets a question right make the screen or card say correct and then turn the card green. 
+    * Add each card $100, $300, and $500 that is correctly answered and get the sum. 
+
+The game ends when all cards are answered or when the user misses 3 answers. 
+
+
+

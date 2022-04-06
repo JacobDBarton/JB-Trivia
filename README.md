@@ -14,9 +14,11 @@ For my first project I'm going to create a trivia game that allows a user to dec
 - Have a timer set to an interval of 30 seconds.
 - Make sure each card has a right or wrong answer.
 - Play again function to reset the game.
+- Add a current score function
 
 # Stretch Goals
 
 - Add a second player option.
 - Play against the AI.
 - Add music
+- Add a previous game score under current score
