@@ -1,4 +1,5 @@
 // global variable
+const cash = document.getElementById("cash");
 // selecting all the boxes in the html document
 const boxes = document.querySelectorAll(".box");
 // looping through all the boxes
