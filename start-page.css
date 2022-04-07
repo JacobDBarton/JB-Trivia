@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-html {
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}

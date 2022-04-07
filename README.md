@@ -22,3 +22,6 @@ For my first project I'm going to create a trivia game that allows a user to dec
 - Play against the AI.
 - Add music
 - Add a previous game score under current score
+
+# References 
+https://codepen.io/edeesims/pen/wvpYWW

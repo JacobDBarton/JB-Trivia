@@ -11,10 +11,9 @@ On the second page there will be a navigaion bar that has catgories with cards t
         * color
 
 Once the card has been chosen they have 30 seconds to answer the question.
-    * Add a 30 second timer
-    * Have the booelen === false if timer entends 30secs     
-    * use the setInterval and clearInterval 
-    * setTimeout and clearTimeout
+    * Add a 30 second timer (stretch goal)
+    * Have the booelen === false if timer entends 30secs      
+    * setTimeout and clearTimeout for timer
 
 If the user gets a question wrong update screen with a message saying wrong and make the card turn red.
 If the user doesn't answer the question in the 30 second timer window, turn the card red. 
