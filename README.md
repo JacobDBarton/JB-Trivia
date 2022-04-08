@@ -25,3 +25,11 @@ For my first project I'm going to create a trivia game that allows a user to dec
 
 # References 
 https://codepen.io/edeesims/pen/wvpYWW
+
+https://parade.com/1143195/jessicasager/music-trivia/https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+
+https://icebreakerideas.com/tv-trivia/
+
+https://parade.com/1182514/marynliles/sports-trivia/
+
+https://parade.com/977752/samuelmurrian/movie-trivia/
