@@ -2,8 +2,6 @@
 const optionsWrapper = document.querySelector(".options");
 const options = document.querySelectorAll(".option");
 const resetBtn = document.querySelector(".reset");
-const cash = document.getElementById("cash");
-const grid = document.querySelector(".grid");
 // selecting all the boxes in the html document
 const boxes = document.querySelectorAll(".box");
 const answers = {
