@@ -11,7 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(16, 196, 82);
+  background-color: black;
+  color: white;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -22,7 +23,18 @@ main {
   align-items: center;
   gap: 15px;
   width: 100%;
-  padding: 40px;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  margin: 30px;
+}
+
+header h2 {
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .grid {
@@ -30,7 +42,7 @@ main {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-flow: dense;
   grid-gap: 10px;
-  color: #444;
+  color: white;
   width: 100%;
 }
 
@@ -66,8 +78,6 @@ main {
   margin: 10px auto;
   display: block;
   font-size: 30px;
-  color: white;
-  text-shadow: 2px 2px black;
 }
 
 button {
@@ -104,8 +114,18 @@ button:active {
   transition: transform 0.5s;
 }
 
-.box.disabled {
+.box.disabled,
+.box.correct,
+.box.incorrect {
   pointer-events: none;
+}
+
+.box.correct {
+  background-color: green;
+}
+
+.box.incorrect {
+  background-color: red;
 }
 
 .front,
@@ -122,8 +142,8 @@ button:active {
 }
 
 .back {
-  background: #03446a;
-  color: white;
+  background: rgb(242, 255, 1);
+  color: black;
   transform: rotateY(180deg);
 }
 

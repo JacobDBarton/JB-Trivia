@@ -4,10 +4,37 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
 }
 
 .game-html {
+  height: 100vh;
   width: 100vw;
+  object-fit: contain;
+}
+
+a {
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  top: 65vh;
+  left: 55vw;
+  font-size: 40px;
+  transform: rotate(5deg);
+  letter-spacing: -10px;
+  color: black;
+}
+
+h2 {
+  position: absolute;
+  top: 72vh;
+  left: 56vw;
+  font-size: 20px;
+  transform: rotate(5deg);
+  letter-spacing: -3px;
+  color: black;
 }
 
 body {

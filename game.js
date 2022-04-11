@@ -1,5 +1,8 @@
+const mainEl = document.querySelector("main");
 const gridEl = document.querySelector(".grid");
 const answersEl = document.querySelector(".answers");
+const cashEl = document.getElementById("cash");
+let numWrong = 0;
 
 const categories = [
   {
@@ -125,17 +128,27 @@ function renderCategory(category, categoryIndex) {
   });
 }
 
+function addCash(value) {
+  const cash = parseInt(cashEl.innerText);
+  cashEl.innerText = cash + value;
+}
+
 // add click listener for question
 function registerQuestion(questionEl, question, value) {
-  const onQuestionClick = (e) => {
+  questionEl.addEventListener("click", (e) => {
+    // answer incorrect after 30sec
+    const timer = setTimeout(() => {
+      answerIncorrect(questionEl);
+    }, 30000);
     question.answers.forEach((answer, answerIndex) => {
       const answerEl = renderAnswer(answer);
       answerEl.addEventListener("click", () => {
-        console.log(
-          `answer is ${
-            answerIndex === question.correctAnswer ? "correct" : "incorrect"
-          }`
-        );
+        if (answerIndex === question.correctAnswer) {
+          answerCorrect(questionEl, value);
+        } else {
+          answerIncorrect(questionEl);
+        }
+        clearTimeout(timer);
       });
     });
     // show the options
@@ -146,12 +159,31 @@ function registerQuestion(questionEl, question, value) {
     document.querySelectorAll(".box").forEach((boxEl) => {
       boxEl.classList.add("disabled");
     });
-    // removed the flipped class after 30sec
-    setTimeout(() => {
-      resetQuestions();
-    }, 3000);
-  };
-  questionEl.addEventListener("click", onQuestionClick);
+  });
+}
+
+function answerCorrect(questionEl, value) {
+  questionEl.innerHTML = "";
+  questionEl.classList.add("correct");
+  addCash(value);
+  resetQuestions();
+}
+
+function answerIncorrect(questionEl) {
+  questionEl.innerHTML = "";
+  questionEl.classList.add("incorrect");
+  numWrong++;
+  if (numWrong === 3) {
+    gameOver();
+  }
+  resetQuestions();
+}
+
+function gameOver() {
+  mainEl.innerHTML = "Game Over, you suck!";
+  setTimeout(() => {
+    window.location.href = "/";
+  }, 5000);
 }
 
 function renderQuestion(categoryId, question, value) {
@@ -175,14 +207,6 @@ function renderQuestion(categoryId, question, value) {
   registerQuestion(questionEl, question, value);
 }
 
-// render categories/questions to the DOM
-categories.forEach((category, categoryIndex) => {
-  renderCategory(category, categoryIndex);
-});
-
-// question click event listener callback
-function onSelectQuestion(e) {}
-
 function renderAnswer(answer) {
   const answerEl = document.createElement("button");
   answerEl.classList.add("answer");
@@ -203,5 +227,33 @@ function resetQuestions() {
   });
 }
 
-// answer click event listener callback
-function onSelectAnswer(e) {}
+function initializeGame() {
+  // render categories/questions to the DOM
+  categories.forEach((category, categoryIndex) => {
+    renderCategory(category, categoryIndex);
+  });
+}
+
+function resetGame() {
+  // reset numWrong
+  numWrong = 0;
+  // reset cash to zero
+  cashEl.innerHTML = 0;
+  gridEl.innerHTML = "";
+  answersEl.innerHTML = "";
+  answersEl.classList.add("hidden");
+  initializeGame();
+}
+
+initializeGame();
+
+const startOverBtn = document.querySelector(".reset");
+startOverBtn.addEventListener("click", () => {
+  resetGame();
+});
+startOverBtn.addEventListener("mouseover", () => {
+  startOverBtn.innerHTML = "Cheater";
+});
+startOverBtn.addEventListener("mouseout", () => {
+  startOverBtn.innerHTML = "Start Over";
+});
