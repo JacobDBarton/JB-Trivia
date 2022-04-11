@@ -62,7 +62,7 @@ const categories = [
     category: "Sports",
     questions: [
       {
-        question: "What’s the national sport of Canada?",
+        question: "What's the national sport of Canada?",
         answers: ["Hockey", "Baseball", "Lacrosse", "Football"],
         correctAnswer: 2,
       },
@@ -132,7 +132,7 @@ function renderCategory(category, categoryIndex) {
     renderQuestion(categoryId, question, questionValue);
   });
 }
-
+// add a function tallying up the cash total
 function addCash(value) {
   const cash = parseInt(cashEl.innerText);
   cashEl.innerText = cash + value;
@@ -185,7 +185,7 @@ function answerIncorrect(questionEl) {
 }
 
 function gameOver() {
-  mainEl.innerHTML = "Game Over, you suck!";
+  mainEl.innerHTML = "Failure is a wonderful teacher! - Steve Harvey";
   setTimeout(() => {
     window.location.href = "/";
   }, 5000);
@@ -257,8 +257,22 @@ startOverBtn.addEventListener("click", () => {
   resetGame();
 });
 startOverBtn.addEventListener("mouseover", () => {
-  startOverBtn.innerHTML = "Cheater";
+  startOverBtn.innerHTML = "Are you sure?";
 });
 startOverBtn.addEventListener("mouseout", () => {
   startOverBtn.innerHTML = "Play Again";
 });
+
+// POSSIBLY ADD GAME MUSIC
+// var myGamePiece;
+// var myObstacles = [];
+// var mySound;
+// var myMusic;
+
+// function startGame() {
+//   myGamePiece = new component(30, 30, "red", 10, 120);
+//   mySound = new sound("bounce.mp3");
+//   myMusic = new sound("gametheme.mp3");
+//   myMusic.play();
+//   myGameArea.start();
+// }
