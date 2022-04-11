@@ -4,12 +4,12 @@ const options = document.querySelectorAll(".option");
 const resetBtn = document.querySelector(".reset");
 // selecting all the boxes in the html document
 const boxes = document.querySelectorAll(".box");
-const answers = {
-  1: {
-    options: ["Landslide", "1978", "hdhd", "abab"],
+const answers = [
+  {
+    options: ["Landslide", "1978", "Tonight Tonight", "Disarm"],
     correctAnswer: 0,
   },
-};
+];
 
 // looping through all the boxes
 boxes.forEach((box) => {
