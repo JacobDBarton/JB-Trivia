@@ -1,3 +1,4 @@
+// Global Variables
 const mainEl = document.querySelector("main");
 const gridEl = document.querySelector(".grid");
 const answersEl = document.querySelector(".answers");
@@ -41,18 +42,18 @@ const categories = [
     questions: [
       {
         question: "Family guy took place in which state?",
-        answers: [],
-        correctAnswer: 0,
+        answers: ["Georgia", "New York", "California", "Rhode Island"],
+        correctAnswer: 3,
       },
       {
         question:
           "In the first episodes of Friends, Monica and Rachel live in what apartment number?",
-        answers: [],
-        correctAnswer: 0,
+        answers: ["#4", "#5", "#6", "#7"],
+        correctAnswer: 1,
       },
       {
         question: "What town did the Simpson family live in?",
-        answers: [],
+        answers: ["Springfield", "Cloverfield", "Westfield", "Greenfield"],
         correctAnswer: 0,
       },
     ],
@@ -62,18 +63,23 @@ const categories = [
     questions: [
       {
         question: "What’s the national sport of Canada?",
-        answers: [],
-        correctAnswer: 0,
+        answers: ["Hockey", "Baseball", "Lacrosse", "Football"],
+        correctAnswer: 2,
       },
       {
         question: "Which boxer fought Muhammad Ali and won?",
-        answers: [],
-        correctAnswer: 0,
+        answers: [
+          "Leon Spinks",
+          "Ernie Terrell",
+          "Sonny Liston",
+          "Joe Frazier",
+        ],
+        correctAnswer: 3,
       },
       {
         question: "How old was Tiger Woods when he won the Masters?",
-        answers: [],
-        correctAnswer: 0,
+        answers: ["19", "20", "21", "22"],
+        correctAnswer: 2,
       },
     ],
   },
@@ -81,20 +87,19 @@ const categories = [
     category: "Movies",
     questions: [
       {
-        question: "In The Matrix, does Neo take the blue pill or the red pill?",
-        answers: [],
-        correctAnswer: 0,
+        question: "In The Matrix, what color pill does Neo take?",
+        answers: ["Green", "Blue", "Yellow", "Red"],
+        correctAnswer: 3,
       },
       {
-        question:
-          "The head of what kind of animal is front-and-center in an infamous scene from The Godfather?",
-        answers: [],
+        question: "What Hollywood movie star plays himself in Zombieland?",
+        answers: ["Bill Murray", "Jason Segel", "Jim Carey", "Steve Carell"],
         correctAnswer: 0,
       },
       {
         question: "What is the highest-grossing R-rated movie of all time?",
-        answers: [],
-        correctAnswer: 0,
+        answers: ["Deadpool", "Joker", "The Matrix", "Logan"],
+        correctAnswer: 1,
       },
     ],
   },
@@ -255,5 +260,5 @@ startOverBtn.addEventListener("mouseover", () => {
   startOverBtn.innerHTML = "Cheater";
 });
 startOverBtn.addEventListener("mouseout", () => {
-  startOverBtn.innerHTML = "Start Over";
+  startOverBtn.innerHTML = "Play Again";
 });
