@@ -168,14 +168,14 @@ function registerQuestion(questionEl, question, value) {
 }
 
 function answerCorrect(questionEl, value) {
-  questionEl.innerHTML = "";
+  questionEl.innerHTML = "Correct";
   questionEl.classList.add("correct");
   addCash(value);
   resetQuestions();
 }
 
 function answerIncorrect(questionEl) {
-  questionEl.innerHTML = "";
+  questionEl.innerHTML = "Incorrect";
   questionEl.classList.add("incorrect");
   numWrong++;
   if (numWrong === 3) {
