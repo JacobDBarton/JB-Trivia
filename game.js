@@ -1,4 +1,5 @@
-const grid = document.querySelector(".grid");
+const gridEl = document.querySelector(".grid");
+const answersEl = document.querySelector(".answers");
 
 const categories = [
   {
@@ -98,14 +99,14 @@ const categories = [
 
 // gets the score/value for a question based on the index
 function getQuestionValue(questionIndex) {
-    switch (questionIndex) {
-        case 0:
-            return 100;
-        case 1:
-            return 300;
-        case 2:
-            return 500;
-    }
+  switch (questionIndex) {
+    case 0:
+      return 100;
+    case 1:
+      return 300;
+    case 2:
+      return 500;
+  }
 }
 
 function renderCategory(category, categoryIndex) {
@@ -116,7 +117,7 @@ function renderCategory(category, categoryIndex) {
   // add content
   categoryEl.innerText = category.category;
   // append DOM nodes
-  grid.append(categoryEl);
+  gridEl.append(categoryEl);
   // render questions
   category.questions.forEach((question, questionIndex) => {
     const questionValue = getQuestionValue(questionIndex);
@@ -124,13 +125,42 @@ function renderCategory(category, categoryIndex) {
   });
 }
 
+// add click listener for question
+function registerQuestion(questionEl, question, value) {
+  const onQuestionClick = (e) => {
+    question.answers.forEach((answer, answerIndex) => {
+      const answerEl = renderAnswer(answer);
+      answerEl.addEventListener("click", () => {
+        console.log(
+          `answer is ${
+            answerIndex === question.correctAnswer ? "correct" : "incorrect"
+          }`
+        );
+      });
+    });
+    // show the options
+    answersEl.classList.remove("hidden");
+    // added flipped class to the clicked question
+    questionEl.classList.add("flipped");
+    // disable all clicks on questions
+    document.querySelectorAll(".box").forEach((boxEl) => {
+      boxEl.classList.add("disabled");
+    });
+    // removed the flipped class after 30sec
+    setTimeout(() => {
+      resetQuestions();
+    }, 3000);
+  };
+  questionEl.addEventListener("click", onQuestionClick);
+}
+
 function renderQuestion(categoryId, question, value) {
-  const boxEl = document.createElement("div");
+  const questionEl = document.createElement("div");
   const contentEl = document.createElement("div");
   const frontEl = document.createElement("div");
   const backEl = document.createElement("div");
   // add CSS classes
-  boxEl.classList.add("box", categoryId);
+  questionEl.classList.add("box", categoryId);
   contentEl.classList.add("content");
   frontEl.classList.add("front");
   backEl.classList.add("back");
@@ -139,9 +169,10 @@ function renderQuestion(categoryId, question, value) {
   backEl.innerText = question.question;
   // append DOM nodes
   contentEl.append(frontEl, backEl);
-  boxEl.append(contentEl);
-  grid.append(boxEl);
-  // add click event listener
+  questionEl.append(contentEl);
+  gridEl.append(questionEl);
+  // register the click event listener
+  registerQuestion(questionEl, question, value);
 }
 
 // render categories/questions to the DOM
@@ -152,9 +183,25 @@ categories.forEach((category, categoryIndex) => {
 // question click event listener callback
 function onSelectQuestion(e) {}
 
-function renderAnswer(option) {}
+function renderAnswer(answer) {
+  const answerEl = document.createElement("button");
+  answerEl.classList.add("answer");
+  answerEl.innerText = answer;
+  answersEl.append(answerEl);
+  return answerEl;
+}
 
-function clearAnswers() {}
+function resetQuestions() {
+  answersEl.classList.add("hidden");
+  // remove old answers
+  document.querySelectorAll(".answer").forEach((answerEl) => {
+    answersEl.removeChild(answerEl);
+  });
+  // re-enable clicks on questions and flip cards back over
+  document.querySelectorAll(".box").forEach((boxEl) => {
+    boxEl.classList.remove("disabled", "flipped");
+  });
+}
 
 // answer click event listener callback
 function onSelectAnswer(e) {}

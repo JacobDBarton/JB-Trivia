@@ -104,6 +104,10 @@ button:active {
   transition: transform 0.5s;
 }
 
+.box.disabled {
+  pointer-events: none;
+}
+
 .front,
 .back {
   position: absolute;
