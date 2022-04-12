@@ -1,27 +1,19 @@
-# JB-Trivia
+# WELCOME!
 
-## Project Plan
+## This is a game called Trivia!
 
-For my first project I'm going to create a trivia game that allows a user to decide and choose money cards from four different categories. The categories range from difficulties easy-medium-hard and the user has to answer the questions within a 30 second time limit. If the user cannot answer the question within the 30 second time limit, it will automatically be counted as wrong. After getting three wrong answers the game is over. The user wants to try and get the most points/money by the end of the game.
+## The object of the game is to answer as many questions right from the categories listed and get as much cash as possible. The cash adds up with each right answer selected. If you get three wrong the game is over and you must reset and replay. 
 
-### Idea For The Game Layout
+# Uses HTML, CSS, and JavaScript. 
 
-![wireframe](https://user-images.githubusercontent.com/100392625/162041661-905decd4-4165-4b6d-a130-cebc8589f80c.jpeg)
+## Link -> https://github.com/JacobDBarton/JB-Trivia
 
-# MVP Goals
-
-- Add a nice start page.
-- Have a timer set to an interval of 30 seconds.
-- Make sure each card has a right or wrong answer.
-- Play again function to reset the game.
-- Add a current score function
-
-# Stretch Goals
-
-- Add a second player option.
-- Play against the AI.
-- Add music
-- Add a previous game score under current score
+# Admire Steve Harvey or click "Start Game!" 
+<img width="1432" alt="Screen Shot 2022-04-12 at 3 01 16 PM" src="https://user-images.githubusercontent.com/100392625/163035781-9f97982f-32c8-444f-b25c-450440bc7a6f.png">
+<img width="1432" alt="Screen Shot 2022-04-12 at 3 00 11 PM" src="https://user-images.githubusercontent.com/100392625/163036340-f94d0143-41aa-455e-85fe-429b33529b7e.png">
+<img width="1432"![Uploading Screen Shot 2022-04-12 at 3.00.11 PM.png…]()
+ alt="Screen Shot 2022-04-12 at 3 00 51 PM" src="https://user-images.githubusercontent.com/100392625/163035849-24829462-f135-4385-a37b-e8bee182a611.png">
+<img width="1432" alt="Screen Shot 2022-04-12 at 3 01 31 PM" src="https://user-images.githubusercontent.com/100392625/163035875-f9e97e85-1a9e-4209-9cf7-e764a9ad7f93.png">
 
 # References
 
@@ -36,3 +28,7 @@ https://icebreakerideas.com/tv-trivia/
 https://parade.com/1182514/marynliles/sports-trivia/
 
 https://parade.com/977752/samuelmurrian/movie-trivia/
+
+# Next Steps:
+* Implement a player 2 function.
+* Add sound effects when a card is flipped. 
