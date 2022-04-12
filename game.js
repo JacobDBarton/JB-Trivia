@@ -185,10 +185,11 @@ function answerIncorrect(questionEl) {
 }
 
 function gameOver() {
-  mainEl.innerHTML = "Failure is a wonderful teacher! - Steve Harvey";
+  mainEl.innerHTML =
+    "**GAME OVER** - Failure is a wonderful teacher! - Steve Harvey";
   setTimeout(() => {
     window.location.href = "/";
-  }, 5000);
+  }, 3000);
 }
 
 function renderQuestion(categoryId, question, value) {
@@ -256,23 +257,11 @@ const startOverBtn = document.querySelector(".reset");
 startOverBtn.addEventListener("click", () => {
   resetGame();
 });
+// Allows for a hover feature that shows Are you sure, rather than Play again.
 startOverBtn.addEventListener("mouseover", () => {
   startOverBtn.innerHTML = "Are you sure?";
 });
+// mouseout allows the button to go back to Play Again after it is clicked. If not it'll say Are you sure indefinitely.
 startOverBtn.addEventListener("mouseout", () => {
   startOverBtn.innerHTML = "Play Again";
 });
-
-// POSSIBLY ADD GAME MUSIC
-// var myGamePiece;
-// var myObstacles = [];
-// var mySound;
-// var myMusic;
-
-// function startGame() {
-//   myGamePiece = new component(30, 30, "red", 10, 120);
-//   mySound = new sound("bounce.mp3");
-//   myMusic = new sound("gametheme.mp3");
-//   myMusic.play();
-//   myGameArea.start();
-// }
