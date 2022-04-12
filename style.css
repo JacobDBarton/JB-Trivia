@@ -13,8 +13,7 @@ body {
   flex-direction: column;
   background-color: black;
   color: white;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Gloria Hallelujah", cursive;
 }
 
 main {
@@ -54,6 +53,7 @@ header h2 {
 
 .category1 {
   grid-column: 1;
+  text-align: center;
 }
 .category2 {
   grid-column: 2;
@@ -123,10 +123,18 @@ button:active {
 
 .box.correct {
   background-color: green;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .box.incorrect {
   background-color: red;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .front,
